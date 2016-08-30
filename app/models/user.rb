@@ -1,8 +1,9 @@
 class User < ApplicationRecord
 	attr_accessor :remember_token
+	validates :username, uniqueness: true, presence: true
+	validates :email, presence: true
 	has_many :posts
 	has_secure_password
-	before_create :digest_token
 
 	def User.digest(string)
 		Digest::SHA1.hexdigest(string)
