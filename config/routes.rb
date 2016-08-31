@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'posts#index'
+  root 'sessions#new'
   get 'users/new', to: 'users#new'
   post 'users/new', to: 'users#create'
   get 'posts/new', to: 'posts#new'

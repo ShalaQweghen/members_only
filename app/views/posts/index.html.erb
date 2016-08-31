@@ -7,7 +7,7 @@
 		<% if signed_in? %>
 			<p>Posted by <%= post.user.username %></p>
 		<% else %>
-			<p>Posted by: 'Sign in to see the poster.'</p>
+			<p>Posted by: <%= link_to "Sign in", signin_path %> to see the poster.</p>
 		<% end %>
 	<% end %>
 </ul>

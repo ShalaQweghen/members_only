@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 		if user && user.authenticate(params[:session][:password])
 			sign_in(user)
 			remember(user)
-			redirect_to root_url
+			redirect_to posts_index_url
 		else
 			flash[:danger] = "Invalid username/password combination"
 			render :new

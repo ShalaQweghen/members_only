@@ -1,0 +1,14 @@
+<header>
+  <nav>
+  	<ul>
+  		<li><%= link_to "Members Only", root_url %></li>
+      <li><%= link_to "Posts", posts_index_url %></li>
+  		<% if signed_in? %>
+  			<li><%= link_to "Sign Out", signout_path, method: :delete %></li>
+  		<% else %>
+  			<li><%= link_to "Sign Up", users_new_path %></li>
+  			<li><%= link_to "Sign In", signin_path %></li>
+  		<% end %>
+  	</ul>
+  </nav>
+</header>
